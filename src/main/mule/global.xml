@@ -14,7 +14,7 @@ http://www.mulesoft.org/schema/mule/secure-properties http://www.mulesoft.org/sc
 		<secure-properties:encrypt algorithm="Blowfish" />
 	</secure-properties:config>
 	<global-property doc:name="Global Property" doc:id="fe818a31-acba-4da1-8c2c-a9844c545d84" name="secure.key" value="Scipio235ac!" />
-	<http:request-config name="HTTP_Request_WorldTime_API" doc:name="HTTP Request configuration" doc:id="29c4305d-c676-45b1-8020-270f44b8af19" basePath="/api/timezone" >
-		<http:request-connection host="worldtimeapi.org" />
+	<http:request-config name="HTTP_Request_WorldTime_API" doc:name="HTTP Request configuration" doc:id="29c4305d-c676-45b1-8020-270f44b8af19" basePath="${worldtime.basepath}" >
+		<http:request-connection host="${worldtime.host}" />
 	</http:request-config>
 </mule>
