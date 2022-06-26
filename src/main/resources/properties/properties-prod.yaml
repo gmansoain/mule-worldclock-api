@@ -1,0 +1,11 @@
+http:
+  host: "0.0.0.0"
+  port: "8081"
+  private.port: "8091"
+  
+https:
+  host: "0.0.0.0"
+  port: "8082"
+  private.port: "8092"
+  
+  
