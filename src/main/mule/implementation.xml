@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd"></mule>
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<flow name="implementationFlow" doc:id="c1e8cec4-65ec-4058-b168-fe1e48f7907d" >
+		<http:listener doc:name="Listener" doc:id="872e3a4c-47cb-456b-a83d-637e26301fd3" config-ref="HTTP_Listener_config" path="/{area}/{location}"/>
+		<http:request method="GET" doc:name="Request" doc:id="76f714f0-f19a-4d0d-bf97-1b76a17fe11c" config-ref="HTTP_Request_WorldTime_API" path="/{area}/{location}">
+			<http:uri-params ><![CDATA[#[output application/java
+---
+{
+	area : attributes.uriParams.area,
+	location : attributes.uriParams.location
+}]]]></http:uri-params>
+		</http:request>
+	</flow>
+</mule>
