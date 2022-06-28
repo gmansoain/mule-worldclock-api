@@ -1,0 +1,49 @@
+{
+	"info": {
+		"_postman_id": "ad8a7432-7a7e-48e4-a746-d629fbd84105",
+		"name": "Mule Worldclock API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3257783"
+	},
+	"item": [
+		{
+			"name": "GET time from timezone",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 500ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(500);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://mule-worldtime-api.us-e1.cloudhub.io/europe/london",
+					"protocol": "http",
+					"host": [
+						"mule-worldtime-api",
+						"us-e1",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"europe",
+						"london"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
