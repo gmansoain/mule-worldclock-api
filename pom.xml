@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>37aa8fe0-4188-44c1-a9b5-bdce3ca12f0b</groupId>
-	<artifactId>gon-template</artifactId>
+	<artifactId>mule-worldtime-api</artifactId>
 	<version>1.0.0</version>
 	<packaging>mule-application</packaging>
 
