@@ -17,15 +17,15 @@
 							"    pm.response.to.have.status(200);",
 							"});",
 							"",
-							"pm.test(\"Response time is less than 500ms\", function () {",
-							"    pm.expect(pm.response.responseTime).to.be.below(500);",
+							"pm.test(\"Response time is less than 1000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);",
 							"});"
 						],
 						"type": "text/javascript"
 					}
 				}
 			],
-			"_postman_id": "9b1948fc-08a3-4945-8f11-511b0aa8cdc0",
+			"id": "9b1948fc-08a3-4945-8f11-511b0aa8cdc0",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
