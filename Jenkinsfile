@@ -15,7 +15,8 @@ pipeline {
 
     stage('Test') {
       steps {
-        sh 'newman run ./Postman Collections/mule-worldclock-api-postman-collection.json'
+        sh '''newman run Postman\\ Collections/mule-worldclock-api-postman-collection.json 
+'''
       }
     }
 
