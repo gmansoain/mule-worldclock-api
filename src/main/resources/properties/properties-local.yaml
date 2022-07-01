@@ -8,4 +8,6 @@ https:
   port: "8082"
   private.port: "8092"
   
-  
+worldtime:
+  host: "worldtimeapi.org"
+  basepath: "/api/timezone/"
