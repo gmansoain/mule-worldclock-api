@@ -32,7 +32,7 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": "http://mule-worldtime-api.us-e1.cloudhub.io/europe/london"
+				"url": "http://mule-worldclock-api.us-e1.cloudhub.io/europe/london"
 			},
 			"response": []
 		}
