@@ -6,6 +6,7 @@
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
 	<flow name="implementationFlow" doc:id="c1e8cec4-65ec-4058-b168-fe1e48f7907d" >
 		<http:listener doc:name="Listener" doc:id="872e3a4c-47cb-456b-a83d-637e26301fd3" config-ref="HTTP_Listener_config" path="/{area}/{location}"/>
+		<logger level="INFO" doc:name="Logger" doc:id="6fbba0c1-9289-47dd-ab25-99ff9c7472ed" message="Request received"/>
 		<http:request method="GET" doc:name="Request" doc:id="76f714f0-f19a-4d0d-bf97-1b76a17fe11c" config-ref="HTTP_Request_WorldTime_API" path="/{area}/{location}">
 			<http:uri-params ><![CDATA[#[output application/java
 ---
