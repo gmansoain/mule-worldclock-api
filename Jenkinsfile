@@ -1,3 +1,7 @@
+withCredentials([usernamePassword(credentialsId: 'gon-mule-credentials', passwordVariable: 'mulepassword', usernameVariable: 'muleuser')]) {
+    // some block
+}
+
 pipeline {
   agent any
   stages {
