@@ -1,9 +1,10 @@
-withCredentials([
-        		usernamePassword(credentialsId: 'gon-mule-credentials', passwordVariable: 'mulepassword', usernameVariable: 'muleuser')
-        		]){
+
 
 pipeline {
   agent any
+  withCredentials([
+        		usernamePassword(credentialsId: 'gon-mule-credentials', passwordVariable: 'mulepassword', usernameVariable: 'muleuser')
+        		]){
   stages {
     stage('Build') {
       steps {
@@ -29,5 +30,6 @@ pipeline {
     }
 
   }
+  }
 }
-}
+
