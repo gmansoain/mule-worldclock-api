@@ -1,6 +1,4 @@
-withCredentials([usernamePassword(credentialsId: 'gon-mule-credentials', passwordVariable: 'mulepassword', usernameVariable: 'muleuser')]) {
-    // some block
-}
+
 
 pipeline {
   agent any
@@ -12,10 +10,18 @@ pipeline {
     }
 
     stage('Deploy to Cloudhub') {
-      steps {
+    
+    withCredentials([usernamePassword(credentialsId: 'gon-mule-credentials', passwordVariable: 'mulepassword', usernameVariable: 'muleuser')]) {
+    // some block
+    steps {
         sh 'mvn package deploy -DmuleDeploy -DapplicationName=mule-worldclock-api -Dworkers=1 -Dusername=$muleuser -Dpassword=$mulepassword -DworkerType=Micro -Denvironment=Sandbox -DmuleVersion=4.4.0 -DOSv2=true -Denv=dev -Dsecure.key=Scipio235ac!'
       }
     }
+    
+}
+    
+    
+      
 
     stage('Test') {
       steps {
