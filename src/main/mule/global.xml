@@ -5,7 +5,7 @@
 	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
 http://www.mulesoft.org/schema/mule/secure-properties http://www.mulesoft.org/schema/mule/secure-properties/current/mule-secure-properties.xsd">
-	<global-property doc:name="Global Property" doc:id="f7d475b2-4412-4f09-8376-5d0a72955641" name="env" value="dev" />
+	<global-property doc:name="Global Property" doc:id="f7d475b2-4412-4f09-8376-5d0a72955641" name="env" value="$env" />
 	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="f9f90de7-ac2d-4a6f-acfd-966e9c180fd2" >
 		<http:listener-connection host="${http.host}" port="${http.port}" />
 	</http:listener-config>
