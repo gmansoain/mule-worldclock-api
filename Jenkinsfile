@@ -12,7 +12,7 @@ pipeline {
     stage('Deploy to Cloudhub') {
       steps{
       	withCredentials([usernamePassword(credentialsId: 'gon-mule-credentials', passwordVariable: 'mulepassword', usernameVariable: 'muleuser'), string(credentialsId: 'secretKey', variable: 'secretKey')]) {
-    		sh 'mvn package deploy -DmuleDeploy -DapplicationName=mule-worldclock-api -Dworkers=1 -Dusername=$muleuser -Dpassword=$mulepassword -DworkerType=Micro -Denvironment=Sandbox -DmuleVersion=4.4.0 -DOSv2=true -Denv=Production -Dsecure.key=$secretKey'
+    		sh 'mvn package deploy -DmuleDeploy -DapplicationName=mule-worldclock-api -Dworkers=1 -Dusername=$muleuser -Dpassword=$mulepassword -DworkerType=Micro -Denvironment=Sandbox -DmuleVersion=4.4.0 -DOSv2=true -Denv=dev -Dsecure.key=$secretKey'
     	
 		}
      }			
